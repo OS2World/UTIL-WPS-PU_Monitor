@@ -1,0 +1,582 @@
+<HTML>
+<HEAD>
+   <TITLE>PU Monitor 2.1</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<CENTER>
+<H1>PU Monitor 2.1</H1></CENTER>
+
+<CENTER>
+<H4>
+Copyright (C) 1998,1999  Sergey I. Yevtushenko</H4></CENTER>
+
+<OL>
+<H2>
+Content</H2>
+
+<LI>
+<A HREF="#Introduction">Introduction</A></LI>
+
+<LI>
+<A HREF="#Requirements">Requirements</A></LI>
+
+<LI>
+<A HREF="#Installation">Installation</A></LI>
+
+<LI>
+<A HREF="#Configuration">Configuration</A></LI>
+
+<LI>
+<A HREF="#License">License Agreement</A></LI>
+
+<LI>
+<A HREF="#Trademarks">Trademarks</A></LI>
+
+<LI>
+<A HREF="#Contacts">Contact Information</A></LI>
+
+<LI>
+<A HREF="#Credits">Credits</A></LI>
+</OL>
+<A NAME="Introduction"></A>
+<H3>
+Introduction</H3>
+<P>PU Monitor is a general purpose system monitoring tool for OS/2 PM. The
+idea of implementing such a tool, came to me when I looked into "Settings"
+page of Warp Center, and found there was nothing of interest to me except
+CPU usage. Other available system monitors couldn't meet my needs for different
+reasons and I decided to write another one. The number of parameters monitored
+is limited now to CPU usage, TCP/IP traffic, available memory, uptime,
+and POP3 mailbox monitor. In version 2.0 connection monitor was also added,
+which has no screen presentation and can be used as custom version of ping
+utility able to inform you that connection to some site is lost.
+
+<P>Because the first version of PU Monitor was completely satisfactory
+for me, I have stopped further development. Later this version was made
+available to public and I received a lot of feedback from users of first
+version of PU Monitor, that's why I resumed development. The current version
+significantly differs from first one. This version is completely rewritten,
+uses multithreaded design to gather information, buffered drawing for smooth
+and flicker free look, greatly improved user interface, support for many
+graph types, settings notebook, and many many more smaller improvements,
+so it is really a fully new program.
+
+<P><A NAME="Requirements"></A>
+<H3>
+Requirements</H3>
+
+<DL>Operating system
+<LI>
+OS/2 Warp 4.0 with FP#1 installed</LI>
+
+<BR>or
+<LI>
+OS/2 Warp 3.0 with FP#35 installed</LI>
+</DL>
+
+<DL>TCP/IP
+<LI>
+TCP/IP 3.0 (comes with OS/2 Warp 3.0 Connect)</LI>
+
+<BR>or
+<LI>
+TCP/IP 4.0 (comes with OS/2 Warp 4.0)</LI>
+
+<BR>or
+<LI>TCP/IP 4.1 (separate product)</LI>
+</DL>
+WPS is not required, therefore PU Monitor works with Filebar, Mshell or
+PC/2 in WPS replacement modes.
+<BR><A NAME="Installation"></A>
+<H3>Installation</H3>
+Installation of PU Monitor is simple. Just place executable file where
+you want on the disk and create WPS Program object using any known method,
+if required.
+<BR><A NAME="Configuration"></A>
+<H3>Configuration</H3>
+PU Monitor is shown <A HREF="#Screenshot">at screen</A> as a small window,
+divided into 4 sub windows. Each sub window has it's own purpose. Assignment
+of sub windows from left to right:
+<OL>
+<LI>CPU Monitor</LI>
+<LI>IP Monitor</LI>
+<LI>Memory Monitor</LI>
+<LI>Mailbox monitor</LI>
+</OL>
+<A NAME="Screenshot"></A><IMG SRC="pumon.gif" >
+
+<P>Later these windows will be named by their assignment
+
+<P>When you start PU Monitor for the first time, they are shown using default
+configuration which may definitely different from what you want. To solve
+this problem, just press right mouse button over PU Monitor window and
+you'll see menu.
+<OL>This menu consist from following items:
+<LI><B>About</B></LI>
+
+<P>invokes <A HREF="#Settings">Settings dialog</A> box at <A HREF="#About">About</A>
+page.
+<LI>
+<B>Settings</B></LI>
+
+
+<P>invokes <A HREF="#Settings">Settings dialog</A> box at specified page.
+<TABLE>
+<TR>
+<TD><A HREF="#General">General&nbsp;</A></TD>
+</TR>
+
+<TR>
+<TD><A HREF="#CPU">CPU Meter&nbsp;</A></TD>
+</TR>
+
+<TR>
+<TD><A HREF="#Memory">Memory Meter&nbsp;</A></TD>
+</TR>
+
+<TR>
+<TD><A HREF="#TCP">TCP/IP Traffic</A></TD>
+</TR>
+
+<TR>
+<TD><A HREF="#Mail">Mail Checker&nbsp;</A></TD>
+</TR>
+
+<TR>
+<TD><A HREF="#Connectivity">Connectivity&nbsp;</A></TD>
+</TR>
+</TABLE>
+
+<LI><B>Read mail</B></LI>
+
+
+<P>invokes mail program, if it is properly installed and configured in
+<A HREF="#Settings">Settings dialog</A> at <A HREF="#Mail">Mail Checker</A>
+page.
+<LI><B>Exit</B></LI>
+
+<P>closes program window and shuts down program.</OL>
+<A NAME="Settings"></A>
+<H4>Settings dialog.</H4>
+
+<DL>Settings dialog contains most settings of PU Monitor. It consists of
+7 pages:
+<LI><A HREF="#General">General</A></LI>
+<LI><A HREF="#CPU">CPU Meter</A></LI>
+<LI><A HREF="#Memory">Memory Meter</A></LI>
+<LI><A HREF="#TCP">TCP/IP Traffic</A></LI>
+<LI><A HREF="#Mail">Mail Checker</A></LI>
+<LI><A HREF="#Connectivity">Connectivity</A></LI>
+<LI><A HREF="#About">About</A></LI>
+</DL>
+Each page contains settings applicable to appropriate monitor window or
+program in general.
+<UL><A NAME="General"></A>
+<H4>General</H4>
+<I>This page is used to set up general settings and colors for user defined
+palette.</I>
+
+<P>
+<LI>Group <B>Behavior</B>:</LI>
+
+<UL>
+<LI>Float on top.</LI>
+
+<BR>Range: On/Off.
+
+<P>This check box is responsible for switching on and off <B>Float on top</B>
+feature of PU Monitor. Making them on gives PU Monitor ability to float
+on top of all windows, even if they are maximized and therefore makes it
+always visible.
+
+<LI>Attach to Warp Center.</LI>
+
+<BR>Range: On/Off.
+
+<P>This check box is responsible for switching on and off <B>Attach to
+Warp Canter</B> feature of PU Monitor. Making them on gives PU Monitor
+ability to float on top of Warp Center window. Windows which overlaps Warp
+Center overlaps also PU Monitor window. Also PU Monitor tries to follow
+Warp Center Window as long as possible.
+<BR><B>Note:</B> This feature is dependent from availability of Warp Center
+window in <B>Window List</B>. Therefore, if you delete Warp Center from
+this list, for example using Task Switcher from <A HREF="http://www.lab321.ru/~dip/sysbar2/">SysBar/2</A>
+package, this feature would not work.
+
+<LI>Lock in place.</LI>
+
+<BR>Range: On/Off.
+
+<P>This check box is responsible for switching on and off ability of PU
+Monitor window to be dragged with left mouse button. You should note that
+this check box is does not switch off the ability of PU Monitor window
+to be changed in size.</UL>
+
+<LI>Group <B>Look</B>:</LI>
+
+<UL>
+<LI>Overlap Warp Center buttons</LI>
+
+<UL>
+<LI>Left</LI>
+
+<BR>Range:"None"/"Shutdown"/"Find/Shutdown"/"Lock/Find/Shutdown"/"All"
+<LI>Right</LI>
+
+<BR>Range:"None"/"Tray List"
+
+<P>Select Warp Center buttons which will overlapped by PU Monitor. This
+options have effect only when <B>Attach to Warp Center</B> is on.</UL>
+
+<LI>3D look: look of PU Monitor sub windows.</LI>
+
+<BR>Range: On/Off.</UL>
+
+<LI>Group <B>Palette</B>:</LI>
+
+<TABLE>
+<TR>
+<TD>Default</TD>
+
+<TD><IMG SRC="color0.gif" ></TD>
+</TR>
+
+<TR>
+<TD>Inverse Gray</TD>
+
+<TD><IMG SRC="color1.gif" ></TD>
+</TR>
+
+<TR>
+<TD>Light Gray</TD>
+
+<TD><IMG SRC="color2.gif" ></TD>
+</TR>
+
+<TR>
+<TD>Dark Gray</TD>
+
+<TD><IMG SRC="color3.gif" ></TD>
+</TR>
+
+<TR>
+<TD>Green on Black</TD>
+
+<TD><IMG SRC="color4.gif" ></TD>
+</TR>
+
+<TR>
+<TD>Gray on Black 1</TD>
+
+<TD><IMG SRC="color5.gif" ></TD>
+</TR>
+
+<TR>
+<TD>Gray on Black 2</TD>
+
+<TD><IMG SRC="color6.gif" ></TD>
+</TR>
+
+<TR>
+<TD>Combined Black</TD>
+
+<TD><IMG SRC="color7.gif" ></TD>
+</TR>
+
+<TR>
+<TD>User defined</TD>
+
+<TD>uses colors which can be tuned through <B>Color</B> group described
+below.</TD>
+</TR>
+</TABLE>
+
+<LI>
+Group <B>Color</B></LI>
+
+
+<P><IMG SRC="sample.gif" >
+
+<P>Choose color which you want to edit, and set it as you prefer
+using <B>Red</B>, <B>Green</B> and <B>Blue</B> spin buttons. Image above
+will help you to find dependence between color name and parts of PU Monitor.
+If you want to preview results, press <B>Apply</B> push button.
+<BR><B>Note:</B> pressing this push button will make all changes permanent
+and stores it in PU Monitor INI file.</UL>
+
+<UL><A NAME="CPU"></A>
+<H4>
+CPU Meter</H4>
+<I>This page tunes CPU usage meter.</I>
+<LI>
+Refresh interval: interval between window refreshes.</LI>
+
+<BR>Range: 1-10 seconds.
+<LI>
+Graph: type of the graph displayed in windows.</LI>
+
+<BR>Range: None/Bar/Graph.
+<LI>
+Text: show or hide values of last CPU Usage measurement.</LI>
+
+<BR>Range: On/Off</UL>
+
+<UL><A NAME="Memory"></A>
+<H4>
+Memory Meter</H4>
+<I>This page tunes Memory Meter, Uptime and Clock display.</I>
+<LI>
+Refresh interval: interval between measurements of amount of free memory
+and updating of window content.</LI>
+
+<BR>Range: 1-100 seconds.
+<LI>
+Clock: show or hide clock.</LI>
+
+<BR>Range: On/Off
+<LI>
+RAM: show or hide information about free RAM.</LI>
+
+<BR>Range: On/Off
+<LI>
+Group <B>Uptime</B>:</LI>
+
+<UL>
+<LI>
+Show: show or hide displaying of uptime.</LI>
+
+<BR>Range: On/Off.
+<LI>
+Method: chooses method of uptime measurement.</LI>
+
+<BR>Range: Standard/HiRes Timer.
+
+<P><B>Note 1:</B>HiRes stands for High Resolution timer.
+<BR>For more detailed information look at IBM DEVELOPER'S TOOLKIT FOR OS/2
+WARP.
+
+<P><B>Note 2:</B>Standard and High Resolution timers show slightly different
+results, because High Resolution timer depends on the device driver which
+is loaded during the boot sequence a few seconds later than the kernel
+itself is started. Also, the using of DOS application (especially games)
+can break results shown by this method.
+<BR>Despite these disadvantages, this method is highly recommended for
+computers with high uptimes, because it does not wrap values greater than
+48 days.</UL>
+</UL>
+
+<UL><A NAME="TCP"></A>
+<H4>
+TCP/IP Traffic</H4>
+<I>This page tunes TCP/IP Traffic monitor.</I>
+<LI>
+Refresh interval: interval between measurements of traffic.</LI>
+
+<BR>Range: 1-100 seconds.
+<LI>
+Graph: type of the graph displayed in windows:</LI>
+
+<BR>Range: None/Bar/Graph.
+<LI>
+Text: type of values of IP traffic measurement.</LI>
+
+<BR>Range: "None"/"In/Out"/"In/Out/Totals"
+<LI>
+Interface: this combo box contains list of interfaces available at computer.
+Choose one interface which you want to monitor.</LI>
+
+<BR><B>Note:</B> not all interfaces always exists. For dial-up connections
+in TCP/IP stacks prior to 4.1, serial interface appears when connection
+is established and disappears when connection is closed. For TCP/IP 4.1
+serial interface appears when connection is established for the first time
+and exists until reboot.
+<LI>
+Adaptive bar graph: calculate maximum values for bar graph at runtime instead
+of use maximal throughput of interface reported by IP stack.</LI>
+
+<BR>Range: On/Off</UL>
+
+<UL><A NAME="Mail"></A>
+<H4>
+Mail Checker</H4>
+<I>This page tunes POP3 mail box checker.</I>
+<LI>
+Enabled: enables this feature.</LI>
+
+<BR><B>Note:</B> disabling this feature by leaving this check box unchecked
+does not hides Mail Checker sub window. If you don't want to use this feature
+and leave more space to other sub windows you should manually change size
+of the rightmost sub window where Mail Checker resides.
+<LI>
+Refresh interval: interval between checking up the number of messages in
+mail box.</LI>
+
+<BR>Range: 10-999 seconds.
+<LI>
+Group <B>On new mail</B>:</LI>
+
+<UL>
+<LI>
+Sound signal: enables audible signal when new mail has arrived.</LI>
+
+<BR>Range: On/Off.
+<LI>
+Repeat sound: enables repeat of sound signal while mail box is not empty.</LI>
+
+<BR>Range: On/Off.
+<BR><B>Note:</B> Mail checker expects that mail box will be empty when
+you read all messages in it. If your mail program is tuned up so that it
+don't delete messages in mail box it is recommended to make this switch
+off. Leaving <B>Sound signal</B> on in this case will take expected effect:
+you will hear signal once when new mail is arrived.
+<LI>
+Run: Check box, entry field and push button.</LI>
+
+<BR>This feature allows you to start program when new mail is arrived.
+If you want to use this feature make check box <B>Run</B> on (i.e. checked)
+and type full path to program, or push button <B>[...]</B> and find the
+program required using <B>File Open</B> dialog. Program will run using
+program path as working directory.</UL>
+
+<LI>
+<A NAME="Reader"></A>Group <B>Mail Reader:</B></LI>
+
+<UL>
+<LI>
+Path: type full path to program which you use as mail reader. Or find program
+using <B>File Open</B> dialog by pressing <B>[...]</B> button.</LI>
+
+<LI>
+Parameters: type additional parameters which may be required by your mail
+package.</LI>
+
+<BR><B>Note:</B> this program can be started through choosing menu item
+<B>Read mail</B>. Also, this program will be started using program path
+as a working directory. This is required for some mail readers such as
+PMMail.</UL>
+
+<LI>
+Group <B>Account:</B></LI>
+
+<UL>
+<LI>
+User: type your account name</LI>
+
+<LI>
+Server: type address or host name of server which handles your mail box.</LI>
+
+<LI>
+Password: type password for your account.</LI>
+
+<LI>
+Port: type port on which POP3 server works. By default this value is 110,
+this is default value for POP3 service.</LI>
+</UL>
+</UL>
+
+<UL><A NAME="Connectivity"></A>
+<H4>
+Connectivity</H4>
+<I>This page tunes custom ping feature which acts as connectivity monitor.</I>
+
+<P>
+<LI>
+Refresh interval: interval for scanning of list of hosts.</LI>
+
+<BR>Range: 1-999 seconds.
+<BR><B>Note:</B> If you monitor more than one site, this interval will
+be distributed among these sites.
+<LI>
+Group <B>Monitored sites:</B></LI>
+
+<BR>This group consists of entry field, list box and three push buttons:
+<B>Add</B>, <B>Del</B> and <B>Update</B>. This group is used for editing
+list of sites. To add new site in list, type name or address of site in
+entry field and click on the <B>Add</B> push button. If you want to delete
+site from the list, choose site in list box and click <B>Del</B>. If you
+want to change site name, choose site in list, edit it as appropriate in
+entry field and press <B>Update</B> button.
+<LI>
+Group <B>On loss of connectivity:</B></LI>
+
+<BR>This group consist of <B>Sound signal</B> and <B>Run</B> check boxes,
+two entry fields and <B>[...]</B> push button. Usage of this group is similar
+to usage of <A HREF="#Reader">Mail Reader</A> group at <A HREF="#Mail">Mail
+Checker</A> page, except in parameters you can type <B>%s</B> parameter
+which will be replaced with name of site.</UL>
+
+<UL><A NAME="About"></A>
+<H4>About</H4>
+
+Contains short information about author and contact information.
+
+<P><A NAME="License"></A>
+<H3>License Agreement</H3>
+
+<P>Redistribution and use of PU Monitor in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+<OL>
+ <LI> Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ <LI> Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+</UL>
+ <P><B>THIS SOFTWARE IS PROVIDED BY THE AUTHOR OR CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.</B>
+
+<P><B>PU Monitor Copyright (c) 1998,1999 Sergey I. Yevtushenko</B>
+
+<A NAME="Trademarks"></A>
+<H3>Trademarks</H3>
+
+<UL><I>Trademarks mentioned in documentation</I>
+
+<P>
+<LI>OS/2, TCP/IP for OS/2 - Trademark of IBM Corp.</LI>
+<LI>IBM DEVELOPER'S TOOLKIT FOR OS/2 WARP - Trademark of IBM Corp.</LI>
+<LI>PMMail - Trademark of SouthSide Software.</LI>
+<LI>SysBar/2 - (c) Dmitry I. Platonoff.</LI>
+</UL>
+<A NAME="Contacts"></A>
+<H3>Contact Information</H3>
+
+<UL><I>Author can be reached</I>
+
+<P>
+<LI>Internet: <A HREF="MAILTO:evsi@naverex.kiev.ua">evsi@naverex.kiev.ua</A>
+          <A HREF="MAILTO:es@sbs.kiev.ua">es@sbs.kiev.ua</A></LI>
+
+<LI>Fidonet: 2:463/114.69@fidonet</LI>
+
+<LI>
+<A HREF="http://www.naverex.kiev.ua/~evsi/">Author's home page</A></LI>
+</UL>
+<A NAME="Credits"></A>
+<H3>
+Credits</H3>
+Many thanks to peoples at IRC channel <A HREF="http://www.os2.spb.ru/">#OS2russian</A>
+who help me test PU Monitor.
+
+<P>Dmitry Ban
+<BR>Denis Dubenin
+<BR>Dmitry Platonoff
+<BR>Alexander Krapivin
+
+<P>And many many others not listed above.
+
+<P>Special thanks to <B>Judy Ann Dukie</B>
+<BR>She done hard work of proof reading this text.
+</BODY>
+</HTML>

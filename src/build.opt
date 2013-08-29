@@ -1,0 +1,10 @@
+defaultmode='VA'
+compilers.VA ='icc -O+ -Oc+ -Ss+ -G5 -Q+ -Gm+ -I..\include -B"/ST:'stack' /NOE /E:2"'
+libs.add='..\source\si2.lib ..\source\win32k.lib'
+uses='tcpip add pm'
+sourcetype='*.cpp'
+base_header='.\include\base.h'
+base_string_1='@#ES:'
+base_string_2='#@'
+base_string_3='PU Monitor'
+

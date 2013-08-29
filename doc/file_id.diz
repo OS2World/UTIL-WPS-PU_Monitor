@@ -1,0 +1,17 @@
+PU Monitor 2.1
+Small yet functional system monitoring tool for OS/2
+written by Sergey I. Yevtushenko.
+
+It is free and full source code is included.
+
+Features of PU Monitor:
+  - CPU Usage
+  - TCP/IP traffic
+  - Free RAM
+  - Uptime
+  - POP3 mailbox checker
+  - Connection monitor
+  - Customizable look and feel.
+  - Small amount of consumed desktop space.
+  - Unique 'Attach to Warp Center' feature.
+

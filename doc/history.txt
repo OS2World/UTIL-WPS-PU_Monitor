@@ -1,0 +1,90 @@
+/*
+** Module   :HISTORY.TXT
+** Abstract :
+**
+** Copyright (C) Sergey I. Yevtushenko
+**
+** Log: Sun  02/08/1998 Created
+**
+*/
+
++ - added
+* - fixed
+- - dropped
+
+build 166
+        + Merged updates from knut st. osmundsen
+        + Adaptive format for memory amount number
+        + 3D look for text
+        + Mail checker supports up to 5 boxex now
+        + 'Lock in place' disables moving of splitbars
+
+build 165
+        + Merged updates from "Nick Kurshev" <nickols_k@mail.ru>
+        * Other minor updates and cleanups
+
+build 161
+        * IP graphs not switched correctly
+        * CPU meter now works on Aurora SMP
+
+build 160
+        + Anyncronous mail checking (no more lockups during manual check of mail)
+        + Averaging (will make graphs look more smooth)
+
+build 155 (version updated to V2.1)
+        + User defined palette can receive colors with drag and drop
+        + RMB click on splitbars switch split type
+        * Minor changes and cleanups for open source release
+
+build 153
+        * Settings dialog depend from Z-order of pumon
+
+build 152
+        * improved searching of WarpCenter window
+        * another try to fix trap with Matrox video
+
+build 151 (version updated to V2.04)
+        * incorrect choosing of bar drawing direction
+        * graph is dotted on some video adapters (Matrox)
+        * incorrect selection of dropped font
+        + mailbox checker cell actually hidden if feature is disabled
+        + double click on mail checker cell causes immediate check
+        + if space permits some texts is drawn in two lines
+
+build 150 (version updated to V2.03)
+        * If 'Attach to WarpCenter' is off, setting page
+          have few controls enabled at startup
+        * Graph grid moves not in sync with graph data
+        + Support for vertically oriented frame
+
+build 149 (version updated to V2.02)
+        * 'Attach to WarpCenter' acts as 'Float on top'
+           even if WarpCenter not available
+        * Cosmetic changes at 'About' page
+        - removed sub menu item 'About' from menu 'Settings'
+        * Changed docs to reflect changes in program
+
+build 148
+        * replaced ping code
+        + adaptive bar graph.
+
+build 147
+        + selectable WarpCenter buttons overlapping
+
+build 146 (version updated to V2.01)
+        + '3D sub windows' look on/off
+        + Free memory on/off
+        - 'Color palette' sub menu
+        - 'Attach to Warp Center' menu item
+        - 'Float on top' menu item
+        - 'Lock in place' menu item
+        - 'Colors' settings page
+           All of the above moved to new 'General' setings page
+        + 'General' setting page.
+        * some default settings
+
+build 145
+        + improved 'Attach to WarpCenter' feature
+build 144
+        * start of external non-PM programs
+

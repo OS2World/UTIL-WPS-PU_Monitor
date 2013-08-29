@@ -1,0 +1,11 @@
+Upload Information Template for Walnut Creek OS/2 Hobbes
+--------------------------------------------------------
+Archive Name: pumon2s.zip
+Author Name: Sergey I. Yevtushenko
+Author Email: es@os2.ru
+Author Other (Web page etc..): http://es.os2.ru
+Operating System/Version: OS/2 v3.0/4.0, WSeB/ACP/MCP/eCS
+Program Source:
+Replaces:
+Proposed directory for placement: /pub/os2/wpsutil/
+Program Description (please do not exceed 47 characters): System monitoring tool for OS/2 PM
